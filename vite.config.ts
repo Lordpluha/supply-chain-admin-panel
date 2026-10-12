@@ -63,6 +63,10 @@ const SCREENSHOT_INSTANCES = selectedBrowsers.flatMap((browser, browserIndex) =>
 )
 
 const config = defineConfig({
+  // Sub-path the app is served from. `/` locally and in Docker; the GitHub
+  // Pages workflow sets `/<repo>/`. Everything else (router, MSW worker URL)
+  // reads it back through `import.meta.env.BASE_URL`.
+  base: process.env.BASE_PATH ?? '/',
   resolve: {
     tsconfigPaths: true,
   },

@@ -12,7 +12,11 @@ export const enableMocking = async (): Promise<void> => {
   await worker.start({
     // The app owns every request it makes; anything else is Vite's own traffic.
     onUnhandledRequest: 'bypass',
-    serviceWorker: { url: '/mockServiceWorker.js' },
+    // Relative to Vite's `base`, so the worker registers under a sub-path too.
+    serviceWorker: {
+      url: `${import.meta.env.BASE_URL}mockServiceWorker.js`,
+      options: { scope: import.meta.env.BASE_URL },
+    },
     quiet: true,
   })
 }

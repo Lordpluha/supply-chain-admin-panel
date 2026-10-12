@@ -81,6 +81,7 @@ definition.
 |---|---|---|
 | `VITE_API_URL` | `/api` | Path or origin the panel calls. |
 | `VITE_ENABLE_MOCKS` | `true` | `false` sends requests to `VITE_API_URL` for real, instead of to the in-browser mock. |
+| `BASE_PATH` | `/` | Build-time only, read by `vite.config.ts`. The sub-path the bundle is served from, with both slashes (`/supply-chain-admin-panel/`). The router basepath and the MSW worker URL follow it. |
 
 Files:
 
@@ -180,6 +181,20 @@ the panel relies on:
 `dist/client` is a plain static directory. Any host works, provided it does the
 two things above: **history fallback to `_shell.html`**, and **no caching for
 `mockServiceWorker.js`**.
+
+<details>
+<summary>GitHub Pages (<code>.github/workflows/pages.yml</code>)</summary>
+
+Every push to `main` builds with `BASE_PATH=/<repo>/` and publishes
+`dist/client`. Pages has no rewrites, so the workflow copies `_shell.html` to
+both `index.html` and `404.html`: the root gets the shell directly, and any deep
+link lands on the 404 page — which is the same shell — and the router renders
+the right route. Enable it once under **Settings → Pages → Source: GitHub
+Actions**.
+
+Pages sets its own short cache on every file, including `mockServiceWorker.js`;
+that cannot be changed there, and is short enough not to matter for a demo.
+</details>
 
 <details>
 <summary>Netlify <code>_redirects</code></summary>

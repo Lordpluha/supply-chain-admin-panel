@@ -1,0 +1,63 @@
+name: Deploy demo to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deployment finish rather than cancelling it mid-publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # A project site is served from /<repo>/, not from the domain root.
+      - name: Build the static demo
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/
+          VITE_ENABLE_MOCKS: 'true'
+        run: pnpm build
+
+      # SPA mode emits a single `_shell.html`. Pages serves `index.html` for the
+      # root and `404.html` for any other path, so both get the shell and the
+      # router takes over from there — deep links like /countries/42 work.
+      - name: Add the SPA entry points
+        working-directory: dist/client
+        run: |
+          cp _shell.html index.html
+          cp _shell.html 404.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

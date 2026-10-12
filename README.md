@@ -8,6 +8,9 @@ Production is plotted on a world map for any year range between 2010 and 2026,
 and you can arrive at the answer from either direction — pick a country and see
 what it makes, or pick a product and see who makes it.
 
+**Live demo:** https://lordpluha.github.io/supply-chain-admin-panel/ — runs
+entirely in the browser on mocked data, which resets on reload.
+
 <!-- Take-home prototype. Proprietary; see LICENSE. -->
 
 ---

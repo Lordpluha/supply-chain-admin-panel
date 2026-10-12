@@ -10,6 +10,8 @@ export function getRouter() {
 
   const router = createTanStackRouter({
     routeTree,
+    // Matches Vite's `base`, so the app works under a sub-path such as GitHub Pages.
+    basepath: import.meta.env.BASE_URL,
     context: { queryClient },
     scrollRestoration: true,
     defaultPreload: 'intent',
