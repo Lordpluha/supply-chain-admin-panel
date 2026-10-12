@@ -1,0 +1,29 @@
+# Anything the build regenerates, and anything it must never see.
+node_modules
+dist
+.output
+.tanstack
+storybook-static
+coverage
+test-results
+playwright-report
+.vitest-attachments
+
+# Local secrets. `.env.example` and `.env.test` are committed and harmless,
+# but nothing in this image should read any of them — VITE_* values come in
+# as build args.
+.env
+.env.*
+!.env.example
+
+# Tooling and history that only bloat the context.
+.git
+.github
+.claude
+.vscode
+.idea
+*.log
+
+# Docs are for humans reading the repo, not for the image.
+*.md
+!README.md

@@ -1,0 +1,73 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RadioGroup snapshots > matches snapshot 1`] = `
+<div
+  aria-label="File format"
+  class="flex flex-col gap-2"
+  data-slot="radio-group"
+  role="radiogroup"
+>
+  <span
+    aria-checked="true"
+    aria-label="xlsx"
+    class="peer relative flex size-4 shrink-0 items-center justify-center rounded-full border border-input shadow-xs transition-shadow outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-input/30 data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground"
+    data-checked=""
+    data-composite-item-active=""
+    data-slot="radio"
+    id="base-ui-_r_1_"
+    role="radio"
+    tabindex="0"
+  >
+    <span
+      class="size-1.5 rounded-full bg-current"
+      data-checked=""
+      data-slot="radio-indicator"
+    />
+  </span>
+  <input
+    aria-hidden="true"
+    checked=""
+    id="base-ui-_r_2_"
+    style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;"
+    tabindex="-1"
+    type="radio"
+    value="xlsx"
+  />
+  <span
+    aria-checked="false"
+    aria-label="xls"
+    class="peer relative flex size-4 shrink-0 items-center justify-center rounded-full border border-input shadow-xs transition-shadow outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-input/30 data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground"
+    data-slot="radio"
+    data-unchecked=""
+    id="base-ui-_r_4_"
+    role="radio"
+    tabindex="-1"
+  />
+  <input
+    aria-hidden="true"
+    id="base-ui-_r_5_"
+    style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;"
+    tabindex="-1"
+    type="radio"
+    value="xls"
+  />
+  <span
+    aria-checked="false"
+    aria-label="csv"
+    class="peer relative flex size-4 shrink-0 items-center justify-center rounded-full border border-input shadow-xs transition-shadow outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-input/30 data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground"
+    data-slot="radio"
+    data-unchecked=""
+    id="base-ui-_r_7_"
+    role="radio"
+    tabindex="-1"
+  />
+  <input
+    aria-hidden="true"
+    id="base-ui-_r_8_"
+    style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;"
+    tabindex="-1"
+    type="radio"
+    value="csv"
+  />
+</div>
+`;

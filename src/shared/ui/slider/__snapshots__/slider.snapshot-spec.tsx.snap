@@ -1,0 +1,145 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Slider snapshots > matches snapshot — range 1`] = `
+<div
+  class="data-horizontal:w-full data-vertical:h-full"
+  data-orientation="horizontal"
+  data-slot="slider"
+  id="base-ui-_r_7_"
+  role="group"
+>
+  <div
+    class="relative flex w-full touch-none items-center select-none data-disabled:opacity-50 data-vertical:h-full data-vertical:min-h-40 data-vertical:w-auto data-vertical:flex-col"
+    data-base-ui-slider-control=""
+    data-orientation="horizontal"
+  >
+    <div
+      class="relative grow overflow-hidden rounded-full bg-muted select-none data-horizontal:h-1.5 data-horizontal:w-full data-vertical:h-full data-vertical:w-1.5"
+      data-orientation="horizontal"
+      data-slot="slider-track"
+      style="position: relative;"
+    >
+      <div
+        class="bg-primary select-none data-horizontal:h-full data-vertical:w-full"
+        data-base-ui-slider-indicator=""
+        data-orientation="horizontal"
+        data-slot="slider-range"
+        style="visibility: hidden; position: relative; height: inherit; --start-position: 0%; --relative-size: 0%; inset-inline-start: var(--start-position); width: var(--relative-size);"
+      />
+    </div>
+    <div
+      class="block size-4 shrink-0 rounded-full border border-primary bg-white shadow-sm ring-ring/50 transition-[color,box-shadow] select-none hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+      data-index="0"
+      data-orientation="horizontal"
+      data-slot="slider-thumb"
+      id="base-ui-_r_8_"
+      style="position: absolute; inset-inline-start: var(--position); top: 50%; translate: -50% -50%; --position: 0%; visibility: hidden;"
+    >
+      <input
+        aria-orientation="horizontal"
+        aria-valuenow="2016"
+        aria-valuetext="2,016 start range"
+        id="base-ui-_r_9_"
+        max="2026"
+        min="2010"
+        step="1"
+        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 100%; height: 100%; margin: -1px; position: fixed; top: 0px; left: 0px;"
+        type="range"
+        value="2016"
+      />
+    </div>
+    <div
+      class="block size-4 shrink-0 rounded-full border border-primary bg-white shadow-sm ring-ring/50 transition-[color,box-shadow] select-none hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+      data-index="1"
+      data-orientation="horizontal"
+      data-slot="slider-thumb"
+      id="base-ui-_r_b_"
+      style="position: absolute; inset-inline-start: var(--position); top: 50%; translate: -50% -50%; --position: 0%; visibility: hidden;"
+    >
+      <input
+        aria-orientation="horizontal"
+        aria-valuenow="2024"
+        aria-valuetext="2,024 end range"
+        id="base-ui-_r_c_"
+        max="2026"
+        min="2010"
+        step="1"
+        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 100%; height: 100%; margin: -1px; position: fixed; top: 0px; left: 0px;"
+        type="range"
+        value="2024"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider snapshots > matches snapshot — single value 1`] = `
+<div
+  class="data-horizontal:w-full data-vertical:h-full"
+  data-orientation="horizontal"
+  data-slot="slider"
+  id="base-ui-_r_0_"
+  role="group"
+>
+  <div
+    class="relative flex w-full touch-none items-center select-none data-disabled:opacity-50 data-vertical:h-full data-vertical:min-h-40 data-vertical:w-auto data-vertical:flex-col"
+    data-base-ui-slider-control=""
+    data-orientation="horizontal"
+  >
+    <div
+      class="relative grow overflow-hidden rounded-full bg-muted select-none data-horizontal:h-1.5 data-horizontal:w-full data-vertical:h-full data-vertical:w-1.5"
+      data-orientation="horizontal"
+      data-slot="slider-track"
+      style="position: relative;"
+    >
+      <div
+        class="bg-primary select-none data-horizontal:h-full data-vertical:w-full"
+        data-base-ui-slider-indicator=""
+        data-orientation="horizontal"
+        data-slot="slider-range"
+        style="visibility: hidden; position: relative; height: inherit; --start-position: 0%; inset-inline-start: 0px; width: var(--start-position);"
+      />
+    </div>
+    <div
+      class="block size-4 shrink-0 rounded-full border border-primary bg-white shadow-sm ring-ring/50 transition-[color,box-shadow] select-none hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+      data-index="0"
+      data-orientation="horizontal"
+      data-slot="slider-thumb"
+      id="base-ui-_r_1_"
+      style="position: absolute; inset-inline-start: var(--position); top: 50%; translate: -50% -50%; --position: 0%; visibility: hidden;"
+    >
+      <input
+        aria-orientation="horizontal"
+        aria-valuenow="50"
+        id="base-ui-_r_3_"
+        max="100"
+        min="0"
+        step="1"
+        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 100%; height: 100%; margin: -1px; position: fixed; top: 0px; left: 0px;"
+        type="range"
+        value="50"
+      />
+    </div>
+    <div
+      class="block size-4 shrink-0 rounded-full border border-primary bg-white shadow-sm ring-ring/50 transition-[color,box-shadow] select-none hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+      data-index="0"
+      data-orientation="horizontal"
+      data-slot="slider-thumb"
+      id="base-ui-_r_4_"
+      style="position: absolute; inset-inline-start: var(--position); top: 50%; translate: -50% -50%; --position: 0%; visibility: hidden;"
+    >
+      <input
+        aria-orientation="horizontal"
+        aria-valuenow="50"
+        id="base-ui-_r_6_"
+        max="100"
+        min="0"
+        step="1"
+        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 100%; height: 100%; margin: -1px; position: fixed; top: 0px; left: 0px;"
+        type="range"
+        value="50"
+      />
+    </div>
+  </div>
+</div>
+`;

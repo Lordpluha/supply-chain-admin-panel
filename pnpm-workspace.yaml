@@ -1,0 +1,12 @@
+packages: []
+
+allowBuilds:
+  esbuild: true
+  lightningcss: true
+  msw: false
+  unrs-resolver: true
+
+onlyBuiltDependencies:
+  - esbuild
+  - lefthook
+  - msw

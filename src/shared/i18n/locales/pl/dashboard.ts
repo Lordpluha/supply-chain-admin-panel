@@ -1,0 +1,61 @@
+import type { Translation } from '../en'
+
+/** The supply map and its summary. */
+export const dashboard: Pick<Translation, 'dashboard'> = {
+  dashboard: {
+    title: 'Mapa dostaw',
+    description: 'Produkcja według kraju i produktu, {{from}}–{{to}}.',
+    modeHint: 'Kraj i produkt zawężają się wzajemnie; wybór kraju pokazuje także zakłady.',
+    country: 'Kraj',
+    product: 'Produkt',
+    anyCountry: 'Wszystkie kraje',
+    anyProduct: 'Wszystkie produkty',
+    yearRangeHint:
+      'Oba końce są ruchome. Przeciągnij uchwyt albo ustaw na nim fokus i użyj strzałek.',
+    facility: 'Zakład',
+    anyFacility: 'Wszystkie zakłady',
+    yearRange: 'Lata',
+    clearFilters: 'Wyczyść filtry',
+    filters: 'Filtry',
+    expandMap: 'Powiększ mapę',
+    closeMap: 'Zamknij mapę',
+    showResults_one: 'Pokaż {{count}} kraj',
+    showResults_few: 'Pokaż {{count}} kraje',
+    showResults_many: 'Pokaż {{count}} krajów',
+    showResults_other: 'Pokaż {{count}} krajów',
+    mapTitle: 'Zakłady produkcyjne',
+    mapEmpty: 'Żadna produkcja nie pasuje do tych filtrów.',
+    shareOfTotal: 'całości',
+    clickToFilter: 'Wybierz, aby zawęzić podsumowanie do tego kraju.',
+    clickToClear: 'Wybierz ponownie, aby usunąć filtr.',
+    mapZoomHint:
+      'Przybliżono do wyboru. Zielone punkty to jego zakłady — wybierz kraj ponownie, aby oddalić.',
+    mapHint: 'Wybierz punkt, aby zawęzić podsumowanie do tego kraju.',
+    summaryInfo: 'Wszystko poniżej odzwierciedla filtry powyżej — kraj, produkt i zakres lat.',
+    growthInfo: 'Liczone między pierwszym a ostatnim rokiem z danymi, a nie granicami filtra.',
+    trendInfo:
+      'Produkcja łączna rocznie w całym zakresie. Liczby są też odczytywane przez czytniki ekranu.',
+    byProductInfo:
+      'Uszeregowane według wartości, nie ilości, aby porównać produkty w różnych jednostkach.',
+    byCountryInfo:
+      'Te same liczby co na mapie, w formie tekstu — mapa nigdy nie jest jedynym do nich dostępem.',
+    summaryTitle: 'Podsumowanie',
+    trendTitle: 'Produkcja w czasie',
+    totalOutput: 'Produkcja łączna',
+    estimatedValue: 'Wartość szacunkowa',
+    valueHint: 'Orientacyjnie — ceny fikcyjne, przeliczone po stałym kursie.',
+    mixedUnits: 'Różne jednostki — zobacz podział na produkty',
+    countries: 'Kraje',
+    products: 'Produkty',
+    facilities: 'Zakłady',
+    records: 'Rekordy',
+    peakYear: 'Rok szczytowy',
+    growth: 'Zmiana w okresie',
+    byProduct: 'Według produktu',
+    byCountry: 'Według kraju',
+    facilityCount_one: '{{count}} zakład',
+    facilityCount_few: '{{count}} zakłady',
+    facilityCount_many: '{{count}} zakładów',
+    facilityCount_other: '{{count}} zakładu',
+  },
+}

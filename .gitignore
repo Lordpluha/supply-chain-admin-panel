@@ -1,0 +1,25 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.env*
+# Committed templates: no secrets, and what a new machine starts from.
+!.env.example
+!.env.test
+.tanstack
+.wrangler
+.output
+.vinxi
+__unconfig*
+todos.json
+
+# typescript
+*.tsbuildinfo
+
+*storybook.log
+storybook-static
+test-results
+
+# Visual comparison failure artifacts; reference PNGs remain versioned.
+.vitest-attachments

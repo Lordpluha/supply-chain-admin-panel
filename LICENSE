@@ -1,0 +1,70 @@
+PROPRIETARY SOFTWARE LICENCE
+
+Copyright (c) 2026 Vladyslav Tesliuk. All rights reserved.
+
+This software and its associated source code, documentation, configuration,
+design assets and data (collectively, "the Software") are the exclusive
+property of Vladyslav Tesliuk ("the Owner").
+
+NO LICENCE IS GRANTED
+
+No right, licence or permission of any kind is granted to any person or
+organisation by virtue of having access to the Software, receiving a copy of
+it, or being able to view the repository that contains it.
+
+Without the Owner's PRIOR, EXPRESS, WRITTEN permission, you may NOT:
+
+  1. use the Software, in whole or in part, for any purpose, whether
+     commercial, non-commercial, personal, academic or evaluative;
+  2. copy, reproduce, download, clone, fork or otherwise duplicate it;
+  3. modify, adapt, translate, refactor or create derivative works from it;
+  4. distribute, publish, sublicense, sell, rent, lease or otherwise transfer
+     it or any derivative of it to any third party;
+  5. host, deploy, execute or make it available as a service;
+  6. use it, or any part of it, as training data or as input for a machine
+     learning or generative model;
+  7. remove, obscure or alter this notice or any other proprietary notice.
+
+PERMITTED ONLY BY WRITTEN GRANT
+
+Any permission must be granted by the Owner in writing, must be explicit, and
+extends no further than the exact scope it states. Access to this repository,
+employment, a contractual relationship, a code review, or an interview process
+does not by itself constitute such a grant.
+
+Permission may be requested from the Owner, who is under no obligation to
+grant it and may withdraw any previously granted permission at any time.
+
+EVALUATION NOTICE
+
+Where the Software has been supplied to a named party for the sole purpose of
+evaluating the Owner's work — for example as part of a technical assessment —
+that party may read the Software for that purpose only. That permission does
+not extend to use, copying, modification, redistribution, deployment, internal
+reuse, or retention beyond the evaluation, and it terminates when the
+evaluation concludes.
+
+THIRD-PARTY COMPONENTS
+
+The Software depends on third-party open-source packages, each governed by its
+own licence as declared by its author. This notice applies to the Software
+itself, not to those dependencies. Any mock, sample or seeded data contained in
+the Software is fictitious and is provided for demonstration only.
+
+NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL THE OWNER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+TERMINATION
+
+Any use in breach of this notice terminates all permissions immediately and
+automatically, and the Owner reserves every remedy available at law.

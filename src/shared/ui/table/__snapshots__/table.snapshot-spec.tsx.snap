@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Table snapshots > matches snapshot 1`] = `
+<div
+  class="relative w-full overflow-x-auto"
+  data-slot="table-container"
+>
+  <table
+    class="w-full caption-bottom text-sm"
+    data-slot="table"
+  >
+    <thead
+      class="[&_tr]:border-b"
+      data-slot="table-header"
+    >
+      <tr
+        class="border-b transition-colors hover:bg-muted/50 has-aria-expanded:bg-muted/50 data-[state=selected]:bg-muted"
+        data-slot="table-row"
+      >
+        <th
+          class="h-10 px-2 text-left align-middle font-medium whitespace-nowrap text-foreground [&:has([role=checkbox])]:pr-0"
+          data-slot="table-head"
+        >
+          Name
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="[&_tr:last-child]:border-0"
+      data-slot="table-body"
+    >
+      <tr
+        class="border-b transition-colors hover:bg-muted/50 has-aria-expanded:bg-muted/50 data-[state=selected]:bg-muted"
+        data-slot="table-row"
+      >
+        <td
+          class="p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0"
+          data-slot="table-cell"
+        >
+          Lithium Carbonate
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

@@ -1,0 +1,291 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "import", "jsx-a11y", "oxc", "promise", "unicorn"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "pedantic": "off",
+    "style": "off"
+  },
+  "env": {
+    "browser": true,
+    "es2024": true
+  },
+  "settings": {
+    "react": {
+      "version": "19.0"
+    }
+  },
+  "rules": {
+    "eqeqeq": ["error", "smart"],
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-key": "error",
+    "react/no-array-index-key": "error",
+    "typescript/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "fixStyle": "separate-type-imports"
+      }
+    ],
+    "typescript/no-explicit-any": "error",
+    "import/no-cycle": "error",
+    "unicorn/filename-case": "off",
+    "unicorn/no-null": "off",
+    "import/no-named-as-default-member": "off",
+    "react/no-unstable-nested-components": [
+      "error",
+      {
+        "allowAsProps": true
+      }
+    ]
+  },
+  "ignorePatterns": [
+    ".claude/**",
+    "src/routeTree.gen.ts",
+    "public/mockServiceWorker.js",
+    "dist/**",
+    ".output/**",
+    ".tanstack/**",
+    "storybook-static/**",
+    "node_modules/**"
+  ],
+  "overrides": [
+    {
+      "files": ["src/app/mocks/**", "*.config.ts", "*.config.js"],
+      "rules": {
+        "no-console": "off"
+      }
+    },
+    {
+      "files": ["src/shared/ui/**"],
+      "rules": {
+        "jsx-a11y/label-has-associated-control": "off",
+        "jsx-a11y/heading-has-content": "off",
+        "no-underscore-dangle": "off",
+        "jsx-a11y/prefer-tag-over-role": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off"
+      }
+    },
+    {
+      "files": [
+        "src/shared/config/vitest.setup.ts",
+        "src/**/*.unit-spec.*",
+        "src/**/*.int-spec.*",
+        ".storybook/preview.tsx"
+      ],
+      "rules": {
+        "import/no-unassigned-import": "off"
+      }
+    },
+    {
+      "files": ["src/shared/lib/array.ts"],
+      "rules": {
+        "unicorn/no-array-sort": "off",
+        "unicorn/no-array-reverse": "off"
+      }
+    },
+    {
+      "files": ["src/widgets/world-map/**"],
+      "rules": {
+        "jsx-a11y/prefer-tag-over-role": "off"
+      }
+    },
+    {
+      "files": ["src/shared/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@/app",
+                  "@/app/**",
+                  "@/pages/**",
+                  "@/widgets/**",
+                  "@/features/**",
+                  "@/entities/**"
+                ],
+                "message": "FSD: 'shared' is the bottom layer and may not import from any layer above it. Take what you need as a parameter instead \u2014 see the auth-token provider in shared/api for the pattern."
+              },
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/entities/*/**",
+                  "@/features/*/*",
+                  "@/features/*/**",
+                  "@/widgets/*/*",
+                  "@/widgets/*/**",
+                  "@/pages/*/*",
+                  "@/pages/*/**"
+                ],
+                "message": "Cross-slice imports go through the slice barrel: '@/entities/country', never '@/entities/country/model/country.schema'. Inside a slice use a relative path. See .claude/rules/fsd.md."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/entities/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@/app", "@/app/**", "@/pages/**", "@/widgets/**", "@/features/**"],
+                "message": "FSD: 'entities' may import only 'shared' and a sibling entity's schema or type."
+              },
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/entities/*/**",
+                  "@/features/*/*",
+                  "@/features/*/**",
+                  "@/widgets/*/*",
+                  "@/widgets/*/**",
+                  "@/pages/*/*",
+                  "@/pages/*/**"
+                ],
+                "message": "Cross-slice imports go through the slice barrel: '@/entities/country', never '@/entities/country/model/country.schema'. Inside a slice use a relative path. See .claude/rules/fsd.md."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/features/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@/app", "@/app/**", "@/pages/**", "@/widgets/**"],
+                "message": "FSD: 'features' may import only 'entities' and 'shared'."
+              },
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/entities/*/**",
+                  "@/features/*/*",
+                  "@/features/*/**",
+                  "@/widgets/*/*",
+                  "@/widgets/*/**",
+                  "@/pages/*/*",
+                  "@/pages/*/**"
+                ],
+                "message": "Cross-slice imports go through the slice barrel: '@/entities/country', never '@/entities/country/model/country.schema'. Inside a slice use a relative path. See .claude/rules/fsd.md."
+              },
+              {
+                "group": ["@/features/**"],
+                "message": "FSD: sibling imports are forbidden inside 'features'. If two features need the same thing, it belongs one layer down."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/widgets/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@/app", "@/app/**", "@/pages/**"],
+                "message": "FSD: 'widgets' may import only 'features', 'entities' and 'shared'."
+              },
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/entities/*/**",
+                  "@/features/*/*",
+                  "@/features/*/**",
+                  "@/widgets/*/*",
+                  "@/widgets/*/**",
+                  "@/pages/*/*",
+                  "@/pages/*/**"
+                ],
+                "message": "Cross-slice imports go through the slice barrel: '@/entities/country', never '@/entities/country/model/country.schema'. Inside a slice use a relative path. See .claude/rules/fsd.md."
+              },
+              {
+                "group": ["@/widgets/**"],
+                "message": "FSD: sibling imports are forbidden inside 'widgets'. If two widgets need the same thing, it belongs one layer down."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/pages/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@/app", "@/app/**"],
+                "message": "FSD: 'pages' may not import the app layer."
+              },
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/entities/*/**",
+                  "@/features/*/*",
+                  "@/features/*/**",
+                  "@/widgets/*/*",
+                  "@/widgets/*/**",
+                  "@/pages/*/*",
+                  "@/pages/*/**"
+                ],
+                "message": "Cross-slice imports go through the slice barrel: '@/entities/country', never '@/entities/country/model/country.schema'. Inside a slice use a relative path. See .claude/rules/fsd.md."
+              },
+              {
+                "group": ["@/pages/**"],
+                "message": "FSD: sibling imports are forbidden inside 'pages'. A page composes widgets; it never reaches for another page."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/app/**", "src/routes/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/entities/*/**",
+                  "@/features/*/*",
+                  "@/features/*/**",
+                  "@/widgets/*/*",
+                  "@/widgets/*/**",
+                  "@/pages/*/*",
+                  "@/pages/*/**"
+                ],
+                "message": "Cross-slice imports go through the slice barrel: '@/entities/country', never '@/entities/country/model/country.schema'. Inside a slice use a relative path. See .claude/rules/fsd.md."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

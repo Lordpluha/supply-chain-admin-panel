@@ -1,0 +1,62 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Hero } from './overview/Hero'
+import { Section } from './overview/Canvas'
+import { ComponentCanvas } from './overview/Components'
+import { ColourTokens, TypeScale } from './overview/Tokens'
+
+<Meta title="Overview" />
+
+<div className="flex flex-col gap-10 py-4">
+
+<Hero />
+
+<Section
+  title="Components"
+  description="The primitives the panel is assembled from — shadcn/ui on Base UI, vendored into src/shared/ui and styled only with semantic tokens."
+>
+  <ComponentCanvas />
+</Section>
+
+<Section
+  title="Colour"
+  description="One token set, redefined three times. A token that exists in light and dark but not dim is a bug that only shows up on a theme switch — switch the theme above and watch these move."
+>
+  <ColourTokens />
+</Section>
+
+<Section
+  title="Typography"
+  description="Fifteen semantic steps, every one of them stated in rem. No component ever writes a size: it picks a step, and the step resolves to a --typography-* token."
+>
+  <TypeScale />
+</Section>
+
+</div>
+
+---
+
+## How to read this Storybook
+
+**Theme** and **Language** in the toolbar are global. They change the real `data-theme`
+attribute and the real i18next instance, so what you see is what the panel does — not a
+Storybook approximation.
+
+Every story is also a test. `pnpm test:stories` renders them in Chromium with the
+accessibility addon set to `error`, so a missing label or a bad contrast ratio fails the run
+rather than sitting in a panel.
+
+| Command | What it does |
+| --- | --- |
+| `pnpm storybook` | This, on port 6006. Also serves the MCP endpoint at `/mcp`. |
+| `pnpm storybook:build` | Static build into `storybook-static/`. |
+| `pnpm test:stories` | Runs every story as a browser test. |
+
+## The rules behind it
+
+- `.claude/rules/styling.md` — the three themes, why nothing is hard-coded
+- `.claude/rules/a11y.md` — the WCAG 2.2 AA contract, including the map
+- `DESIGN.md` — the visual and interaction intent
+- `CODE_STYLE.md` — naming, size limits, what never appears in a diff
+
+`src/shared/ui/**` is vendored verbatim from shadcn and is the one place exempt from the
+file-size rule: `shadcn add` must be able to overwrite it cleanly.

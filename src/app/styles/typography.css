@@ -1,0 +1,208 @@
+/**
+ * Typography system — semantic tokens.
+ *
+ * Every size is expressed in `rem` so the scale honours the reader's browser
+ * font-size setting; nothing here is stated in `px`. Token names and the scale
+ * follow `packages/ui-react/src/styles/typography.css` in bitrate.
+ */
+@theme {
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-widest: 0.1em;
+
+  --typography-display-size: var(--text-6xl);
+  --typography-display-weight: var(--font-weight-black);
+  --typography-display-line-height: var(--leading-none);
+  --typography-display-letter-spacing: var(--tracking-tight);
+
+  --typography-h1-size: var(--text-5xl);
+  --typography-h1-weight: var(--font-weight-bold);
+  --typography-h1-line-height: var(--leading-tight);
+  --typography-h1-letter-spacing: var(--tracking-tight);
+
+  --typography-h2-size: var(--text-4xl);
+  --typography-h2-weight: var(--font-weight-bold);
+  --typography-h2-line-height: var(--leading-tight);
+  --typography-h2-letter-spacing: var(--tracking-tight);
+
+  --typography-h3-size: var(--text-3xl);
+  --typography-h3-weight: var(--font-weight-bold);
+  --typography-h3-line-height: var(--leading-snug);
+  --typography-h3-letter-spacing: var(--tracking-normal);
+
+  --typography-h4-size: var(--text-2xl);
+  --typography-h4-weight: var(--font-weight-semibold);
+  --typography-h4-line-height: var(--leading-snug);
+  --typography-h4-letter-spacing: var(--tracking-normal);
+
+  --typography-h5-size: var(--text-xl);
+  --typography-h5-weight: var(--font-weight-semibold);
+  --typography-h5-line-height: var(--leading-normal);
+  --typography-h5-letter-spacing: var(--tracking-normal);
+
+  --typography-h6-size: var(--text-lg);
+  --typography-h6-weight: var(--font-weight-semibold);
+  --typography-h6-line-height: var(--leading-normal);
+  --typography-h6-letter-spacing: var(--tracking-normal);
+
+  --typography-body-lg-size: var(--text-lg);
+  --typography-body-lg-weight: var(--font-weight-normal);
+  --typography-body-lg-line-height: var(--leading-relaxed);
+  --typography-body-lg-letter-spacing: var(--tracking-normal);
+
+  --typography-body-size: var(--text-base);
+  --typography-body-weight: var(--font-weight-normal);
+  --typography-body-line-height: var(--leading-normal);
+  --typography-body-letter-spacing: var(--tracking-normal);
+
+  --typography-body-sm-size: var(--text-sm);
+  --typography-body-sm-weight: var(--font-weight-normal);
+  --typography-body-sm-line-height: var(--leading-normal);
+  --typography-body-sm-letter-spacing: var(--tracking-normal);
+
+  --typography-label-size: var(--text-sm);
+  --typography-label-weight: var(--font-weight-medium);
+  --typography-label-line-height: var(--leading-tight);
+  --typography-label-letter-spacing: var(--tracking-wide);
+
+  --typography-caption-size: var(--text-xs);
+  --typography-caption-weight: var(--font-weight-normal);
+  --typography-caption-line-height: var(--leading-normal);
+  --typography-caption-letter-spacing: var(--tracking-normal);
+
+  --typography-overline-size: var(--text-xs);
+  --typography-overline-weight: var(--font-weight-semibold);
+  --typography-overline-line-height: var(--leading-tight);
+  --typography-overline-letter-spacing: var(--tracking-widest);
+
+  --typography-button-size: var(--text-sm);
+  --typography-button-weight: var(--font-weight-semibold);
+  --typography-button-line-height: var(--leading-tight);
+  --typography-button-letter-spacing: var(--tracking-wide);
+
+  --typography-code-size: var(--text-sm);
+  --typography-code-weight: var(--font-weight-normal);
+  --typography-code-line-height: var(--leading-normal);
+  --typography-code-letter-spacing: var(--tracking-normal);
+}
+
+/**
+ * One utility per semantic token set. `Typography`'s cva variants map onto
+ * these, so changing a size happens in exactly one place — the token above.
+ */
+@utility typo-display {
+  font-size: var(--typography-display-size);
+  font-weight: var(--typography-display-weight);
+  line-height: var(--typography-display-line-height);
+  letter-spacing: var(--typography-display-letter-spacing);
+}
+@utility typo-h1 {
+  font-size: var(--typography-h1-size);
+  font-weight: var(--typography-h1-weight);
+  line-height: var(--typography-h1-line-height);
+  letter-spacing: var(--typography-h1-letter-spacing);
+}
+@utility typo-h2 {
+  font-size: var(--typography-h2-size);
+  font-weight: var(--typography-h2-weight);
+  line-height: var(--typography-h2-line-height);
+  letter-spacing: var(--typography-h2-letter-spacing);
+}
+@utility typo-h3 {
+  font-size: var(--typography-h3-size);
+  font-weight: var(--typography-h3-weight);
+  line-height: var(--typography-h3-line-height);
+  letter-spacing: var(--typography-h3-letter-spacing);
+}
+@utility typo-h4 {
+  font-size: var(--typography-h4-size);
+  font-weight: var(--typography-h4-weight);
+  line-height: var(--typography-h4-line-height);
+  letter-spacing: var(--typography-h4-letter-spacing);
+}
+@utility typo-h5 {
+  font-size: var(--typography-h5-size);
+  font-weight: var(--typography-h5-weight);
+  line-height: var(--typography-h5-line-height);
+  letter-spacing: var(--typography-h5-letter-spacing);
+}
+@utility typo-h6 {
+  font-size: var(--typography-h6-size);
+  font-weight: var(--typography-h6-weight);
+  line-height: var(--typography-h6-line-height);
+  letter-spacing: var(--typography-h6-letter-spacing);
+}
+@utility typo-body-lg {
+  font-size: var(--typography-body-lg-size);
+  font-weight: var(--typography-body-lg-weight);
+  line-height: var(--typography-body-lg-line-height);
+  letter-spacing: var(--typography-body-lg-letter-spacing);
+}
+@utility typo-body {
+  font-size: var(--typography-body-size);
+  font-weight: var(--typography-body-weight);
+  line-height: var(--typography-body-line-height);
+  letter-spacing: var(--typography-body-letter-spacing);
+}
+@utility typo-body-sm {
+  font-size: var(--typography-body-sm-size);
+  font-weight: var(--typography-body-sm-weight);
+  line-height: var(--typography-body-sm-line-height);
+  letter-spacing: var(--typography-body-sm-letter-spacing);
+}
+@utility typo-label {
+  font-size: var(--typography-label-size);
+  font-weight: var(--typography-label-weight);
+  line-height: var(--typography-label-line-height);
+  letter-spacing: var(--typography-label-letter-spacing);
+}
+@utility typo-caption {
+  font-size: var(--typography-caption-size);
+  font-weight: var(--typography-caption-weight);
+  line-height: var(--typography-caption-line-height);
+  letter-spacing: var(--typography-caption-letter-spacing);
+}
+@utility typo-overline {
+  font-size: var(--typography-overline-size);
+  font-weight: var(--typography-overline-weight);
+  line-height: var(--typography-overline-line-height);
+  letter-spacing: var(--typography-overline-letter-spacing);
+  text-transform: uppercase;
+}
+@utility typo-button {
+  font-size: var(--typography-button-size);
+  font-weight: var(--typography-button-weight);
+  line-height: var(--typography-button-line-height);
+  letter-spacing: var(--typography-button-letter-spacing);
+}
+@utility typo-code {
+  font-family: var(--font-mono);
+  font-size: var(--typography-code-size);
+  font-weight: var(--typography-code-weight);
+  line-height: var(--typography-code-line-height);
+  letter-spacing: var(--typography-code-letter-spacing);
+}

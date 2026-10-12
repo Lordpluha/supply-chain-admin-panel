@@ -1,0 +1,31 @@
+# Runs the panel on its own. There is no database and no API service to start
+# alongside it: the mock API lives inside the bundle.
+services:
+  panel:
+    build:
+      context: .
+      # Rebuild with different values to point the panel at a real API:
+      #   docker compose build --build-arg VITE_ENABLE_MOCKS=false \
+      #                        --build-arg VITE_API_URL=https://api.example.com
+      # They are baked in at build time — a runtime env var has no effect.
+      args:
+        VITE_API_URL: /api
+        VITE_ENABLE_MOCKS: "true"
+    image: supply-chain-admin-panel:local
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      # nginx needs somewhere to write its temp bodies; everything else is
+      # immutable.
+      - /tmp
+      - /var/cache/nginx
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s

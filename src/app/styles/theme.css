@@ -1,0 +1,209 @@
+/**
+ * Three themes, one token set.
+ *
+ * `light` is the default and lives on `:root`, so the panel renders correctly
+ * before any JavaScript runs. `dark` and `dim` override the same tokens under
+ * a `data-theme` attribute on `<html>`; `dim` is a lower-contrast slate variant
+ * for long sessions.
+ */
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.508 0.118 165.612);
+  --primary-foreground: oklch(0.979 0.021 166.113);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.452 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  /* Darker than upstream shadcn so `text-destructive` clears 4.5:1 on its own
+     `bg-destructive/10` tint (was 3.98); the button and badge variants use that pair. */
+  --destructive: oklch(0.52 0.221 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --success: oklch(0.52 0.13 156);
+  --success-foreground: oklch(0.985 0 0);
+  /* 0.62 gave 3.73:1 as text on white. At this lightness a solid fill needs a
+     light foreground, as `--success` already has. */
+  --warning: oklch(0.52 0.134 72);
+  --warning-foreground: oklch(0.985 0 0);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.508 0.118 165.612);
+  --chart-1: oklch(0.508 0.118 165.612);
+  --chart-highlight: oklch(0.72 0.12 162);
+  --chart-2: oklch(0.62 0.16 72);
+  --chart-3: oklch(0.55 0.15 255);
+  --chart-4: oklch(0.6 0.18 330);
+  --chart-5: oklch(0.577 0.245 27.325);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.508 0.118 165.612);
+  --sidebar-primary-foreground: oklch(0.979 0.021 166.113);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.508 0.118 165.612);
+  /* Map-specific tokens, so the world map is themed like everything else. */
+  --map-ocean: oklch(0.97 0.008 240);
+  --map-land: oklch(0.925 0.004 286);
+  --map-land-stroke: oklch(0.86 0.005 286);
+  --map-graticule: oklch(0.9 0.004 286);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.696 0.17 162.48);
+  --primary-foreground: oklch(0.21 0.04 166);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.72 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.141 0.005 285.823);
+  --success: oklch(0.72 0.15 156);
+  --success-foreground: oklch(0.141 0.005 285.823);
+  --warning: oklch(0.78 0.15 72);
+  --warning-foreground: oklch(0.141 0.005 285.823);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.696 0.17 162.48);
+  --chart-1: oklch(0.696 0.17 162.48);
+  --chart-highlight: oklch(0.82 0.12 162);
+  --chart-2: oklch(0.78 0.15 72);
+  --chart-3: oklch(0.68 0.15 255);
+  --chart-4: oklch(0.72 0.17 330);
+  --chart-5: oklch(0.704 0.191 22.216);
+  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.696 0.17 162.48);
+  --sidebar-primary-foreground: oklch(0.262 0.051 172.552);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.696 0.17 162.48);
+  --map-ocean: oklch(0.18 0.012 250);
+  --map-land: oklch(0.28 0.008 286);
+  --map-land-stroke: oklch(0.36 0.008 286);
+  --map-graticule: oklch(0.26 0.008 286);
+}
+
+/** Dim: the same dark palette lifted off pure black and tinted slate-blue. */
+:root[data-theme="dim"] {
+  color-scheme: dark;
+
+  --background: oklch(0.256 0.022 257);
+  --foreground: oklch(0.945 0.008 257);
+  --card: oklch(0.302 0.024 257);
+  --card-foreground: oklch(0.945 0.008 257);
+  --popover: oklch(0.302 0.024 257);
+  --popover-foreground: oklch(0.945 0.008 257);
+  --primary: oklch(0.72 0.145 163);
+  --primary-foreground: oklch(0.22 0.035 165);
+  --secondary: oklch(0.352 0.024 257);
+  --secondary-foreground: oklch(0.945 0.008 257);
+  --muted: oklch(0.352 0.024 257);
+  --muted-foreground: oklch(0.755 0.02 257);
+  --accent: oklch(0.362 0.028 257);
+  --accent-foreground: oklch(0.945 0.008 257);
+  --destructive: oklch(0.712 0.17 22);
+  --destructive-foreground: oklch(0.2 0.02 257);
+  --success: oklch(0.74 0.14 156);
+  --success-foreground: oklch(0.2 0.02 257);
+  --warning: oklch(0.8 0.14 72);
+  --warning-foreground: oklch(0.2 0.02 257);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.72 0.145 163);
+  --chart-1: oklch(0.72 0.145 163);
+  --chart-highlight: oklch(0.84 0.11 163);
+  --chart-2: oklch(0.8 0.14 72);
+  --chart-3: oklch(0.7 0.14 255);
+  --chart-4: oklch(0.74 0.16 330);
+  --chart-5: oklch(0.712 0.17 22);
+  --sidebar: oklch(0.286 0.024 257);
+  --sidebar-foreground: oklch(0.945 0.008 257);
+  --sidebar-primary: oklch(0.72 0.145 163);
+  --sidebar-primary-foreground: oklch(0.22 0.035 165);
+  --sidebar-accent: oklch(0.362 0.028 257);
+  --sidebar-accent-foreground: oklch(0.945 0.008 257);
+  --sidebar-border: oklch(1 0 0 / 14%);
+  --sidebar-ring: oklch(0.72 0.145 163);
+  --map-ocean: oklch(0.226 0.026 250);
+  --map-land: oklch(0.342 0.024 257);
+  --map-land-stroke: oklch(0.42 0.026 257);
+  --map-graticule: oklch(0.322 0.024 257);
+}
+
+@theme inline {
+  --font-sans: "Roboto Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Raleway Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Monaco, Consolas, "Liberation Mono", monospace;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-chart-highlight: var(--chart-highlight);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-map-ocean: var(--map-ocean);
+  --color-map-land: var(--map-land);
+  --color-map-land-stroke: var(--map-land-stroke);
+  --color-map-graticule: var(--map-graticule);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}

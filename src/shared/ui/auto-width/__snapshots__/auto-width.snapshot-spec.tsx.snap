@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AutoWidth snapshots > matches snapshot 1`] = `
+<span
+  class="inline-grid w-full max-w-full"
+>
+  <span
+    aria-hidden="true"
+    class="typo-body-sm pointer-events-none invisible col-start-1 row-start-1 h-0 overflow-hidden px-3 whitespace-nowrap pe-9"
+  >
+    Brine extraction
+  </span>
+  <span
+    class="col-start-1 row-start-1 min-w-0"
+  >
+    <button
+      type="button"
+    >
+      Mine
+    </button>
+  </span>
+</span>
+`;
